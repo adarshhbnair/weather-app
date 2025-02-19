@@ -1,7 +1,7 @@
 .weather-container {
     background: rgba(160, 209, 234, 0.2);
     backdrop-filter: blur(10px);
-    border-radius: 10px;
+    border-radius: 100px;
     max-width: 400px;
     text-align: center;
 }
