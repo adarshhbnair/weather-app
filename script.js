@@ -1,6 +1,6 @@
 document.getElementById("searchBtn").addEventListener("click", async function () {
     const city = document.getElementById("cityInput").value.trim();
-    const apiKey = "e6409d77f86641b69b80e35899c3b951";  // Replace with your OpenWeatherMap API Key
+    const apiKey = "e6409d77f86641b69b80e35899c3b951"; 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
     if (city === "") {
@@ -18,7 +18,7 @@ document.getElementById("searchBtn").addEventListener("click", async function ()
             return;
         }
 
-        document.getElementById("weatherResult").classList.remove("hidden");
+        document.getElementById("weatherResult").style.display = "block";
         document.getElementById("cityName").textContent = `${data.name}, ${data.sys.country}`;
         document.getElementById("temperature").textContent = `${Math.round(data.main.temp)}°C`;
         document.getElementById("description").textContent = data.weather[0].description;
@@ -33,8 +33,8 @@ document.getElementById("searchBtn").addEventListener("click", async function ()
 });
 
 function showError(message) {
-    document.getElementById("weatherResult").classList.add("hidden");
+    document.getElementById("weatherResult").style.display = "none";
     const errorMsg = document.getElementById("errorMsg");
     errorMsg.textContent = message;
-    errorMsg.classList.remove("hidden");
+    errorMsg.style.display = "block";
 }
